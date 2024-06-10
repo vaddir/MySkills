@@ -1,1 +1,1 @@
-Mindmap : links to apache spark concepts
+Mindmap : links to spark and DB Notes.
