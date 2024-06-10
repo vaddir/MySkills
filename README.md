@@ -1,1 +1,1 @@
-Mindmap : links to spark and DB Notes.
+SparkorDBNotes : links to spark and DB Notes.
