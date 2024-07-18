@@ -292,6 +292,7 @@
 				"type": "BlobEventsTrigger",
 				"typeProperties": {
 					"blobPathBeginsWith": "/sourcedata/blobs/",
+					"blobPathEndsWith": ".json",
 					"ignoreEmptyBlobs": true,
 					"scope": "[parameters('trigger_btos_properties_typeProperties_scope')]",
 					"events": [
