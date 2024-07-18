@@ -53,6 +53,7 @@
 				}
 			}
 		],
+		"concurrency": 2,
 		"annotations": []
 	}
 }
