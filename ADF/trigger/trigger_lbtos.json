@@ -1,0 +1,18 @@
+{
+	"name": "trigger_lbtos",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [],
+		"type": "BlobEventsTrigger",
+		"typeProperties": {
+			"blobPathBeginsWith": "/sourcedata/blobs/",
+			"blobPathEndsWith": ".json",
+			"ignoreEmptyBlobs": false,
+			"scope": "/subscriptions/99bf074b-ad37-4f29-ae67-426e93ab209f/resourceGroups/my-learning/providers/Microsoft.Storage/storageAccounts/strgmylearning",
+			"events": [
+				"Microsoft.Storage.BlobCreated"
+			]
+		}
+	}
+}
