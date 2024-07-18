@@ -151,6 +151,7 @@
 						}
 					}
 				],
+				"concurrency": 2,
 				"policy": {
 					"elapsedTimeMetric": {}
 				},
@@ -217,6 +218,7 @@
 						}
 					}
 				],
+				"concurrency": 2,
 				"policy": {
 					"elapsedTimeMetric": {}
 				},
@@ -279,7 +281,7 @@
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"annotations": [],
-				"runtimeState": "Stopped",
+				"runtimeState": "Started",
 				"pipelines": [
 					{
 						"pipelineReference": {
