@@ -1,10 +1,10 @@
 {
-	"name": "source_to_bronze",
+	"name": "silver_to_gold",
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy data to bronze",
-				"type": "Copy",
+				"name": "silver to gold",
+				"type": "DatabricksNotebook",
 				"dependsOn": [],
 				"policy": {
 					"timeout": "0.12:00:00",
@@ -15,41 +15,42 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"source": {
-						"type": "JsonSource",
-						"storeSettings": {
-							"type": "AzureBlobFSReadSettings",
-							"recursive": true,
-							"wildcardFileName": "*.json",
-							"enablePartitionDiscovery": false
-						},
-						"formatSettings": {
-							"type": "JsonReadSettings"
-						}
-					},
-					"sink": {
-						"type": "ParquetSink",
-						"storeSettings": {
-							"type": "AzureBlobFSWriteSettings"
-						},
-						"formatSettings": {
-							"type": "ParquetWriteSettings"
-						}
-					},
-					"enableStaging": false
+					"notebookPath": "/Users/rajeswarivaddi@dataengineer668.onmicrosoft.com/db_silver_to_gold"
 				},
-				"inputs": [
+				"linkedServiceName": {
+					"referenceName": "AzureDatabricks1",
+					"type": "LinkedServiceReference"
+				}
+			},
+			{
+				"name": "Notebook3",
+				"type": "DatabricksNotebook",
+				"dependsOn": [
 					{
-						"referenceName": "loadJson",
-						"type": "DatasetReference"
+						"activity": "silver to gold",
+						"dependencyConditions": [
+							"Completed"
+						]
 					}
 				],
-				"outputs": [
-					{
-						"referenceName": "Parquet1",
-						"type": "DatasetReference"
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"notebookPath": "/Users/rajeswarivaddi@dataengineer668.onmicrosoft.com/Notebook3",
+					"baseParameters": {
+						"Input": "silvertogold"
 					}
-				]
+				},
+				"linkedServiceName": {
+					"referenceName": "AzureDatabricks1",
+					"type": "LinkedServiceReference"
+				}
 			}
 		],
 		"annotations": []
