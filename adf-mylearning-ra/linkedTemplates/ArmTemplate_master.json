@@ -23,7 +23,7 @@
 			"type": "string",
 			"defaultValue": "0523-205633-oh76xy6w"
 		},
-		"trigger_btos_properties_typeProperties_scope": {
+		"trigger_lbtos_properties_typeProperties_scope": {
 			"type": "string",
 			"defaultValue": "/subscriptions/99bf074b-ad37-4f29-ae67-426e93ab209f/resourceGroups/my-learning/providers/Microsoft.Storage/storageAccounts/strgmylearning"
 		},
@@ -66,8 +66,8 @@
 					"AzureDatabricks1_properties_typeProperties_existingClusterId": {
 						"value": "[parameters('AzureDatabricks1_properties_typeProperties_existingClusterId')]"
 					},
-					"trigger_btos_properties_typeProperties_scope": {
-						"value": "[parameters('trigger_btos_properties_typeProperties_scope')]"
+					"trigger_lbtos_properties_typeProperties_scope": {
+						"value": "[parameters('trigger_lbtos_properties_typeProperties_scope')]"
 					}
 				}
 			},

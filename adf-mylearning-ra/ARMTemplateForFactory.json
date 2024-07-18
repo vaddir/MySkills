@@ -23,7 +23,7 @@
 			"type": "string",
 			"defaultValue": "0523-205633-oh76xy6w"
 		},
-		"trigger_btos_properties_typeProperties_scope": {
+		"trigger_lbtos_properties_typeProperties_scope": {
 			"type": "string",
 			"defaultValue": "/subscriptions/99bf074b-ad37-4f29-ae67-426e93ab209f/resourceGroups/my-learning/providers/Microsoft.Storage/storageAccounts/strgmylearning"
 		}
@@ -276,7 +276,7 @@
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/trigger_btos')]",
+			"name": "[concat(parameters('factoryName'), '/trigger_lbtos')]",
 			"type": "Microsoft.DataFactory/factories/triggers",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -296,7 +296,7 @@
 					"blobPathBeginsWith": "/sourcedata/blobs/",
 					"blobPathEndsWith": ".json",
 					"ignoreEmptyBlobs": false,
-					"scope": "[parameters('trigger_btos_properties_typeProperties_scope')]",
+					"scope": "[parameters('trigger_lbtos_properties_typeProperties_scope')]",
 					"events": [
 						"Microsoft.Storage.BlobCreated"
 					]
